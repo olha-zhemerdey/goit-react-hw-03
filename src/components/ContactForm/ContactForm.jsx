@@ -1,6 +1,5 @@
 import css from "./ContactForm.module.css";
 import { nanoid } from "nanoid";
-import { useId } from "react";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -21,8 +20,8 @@ const initialValues = {
 };
 
 const ContactForm = ({ onAdd }) => {
-  const nameFieldId = useId();
-  const numberFieldId = useId();
+  // const nameFieldId = useId();
+  // const numberFieldId = useId();
 
   const handleSubmit = (values, actions) => {
     const newContact = { ...values, id: nanoid() };
@@ -39,36 +38,33 @@ const ContactForm = ({ onAdd }) => {
     >
       {({ isSubmitting }) => (
         <Form className={css.form}>
-          <label htmlFor={nameFieldId}>Name</label>
-          <div>
-            <Field
-              className={css.field}
-              type="text"
-              name="name"
-              id={nameFieldId}
-            />
-            <ErrorMessage
-              name="name"
-              component="div"
-              style={{ color: "tomato" }}
-            />
-          </div>
-
-          <label htmlFor={numberFieldId}>Number</label>
-          <div>
-            <Field
-              className={css.field}
-              type="tel"
-              inputMode="tel"
-              name="number"
-              id={numberFieldId}
-            />
-            <ErrorMessage
-              name="number"
-              component="div"
-              style={{ color: "tomato" }}
-            />
-          </div>
+          <label>
+            Name
+            <div>
+              <Field className={css.field} type="text" name="name" />
+              <ErrorMessage
+                name="name"
+                component="div"
+                style={{ color: "tomato" }}
+              />
+            </div>
+          </label>
+          <label>
+            Number
+            <div>
+              <Field
+                className={css.field}
+                type="tel"
+                inputMode="tel"
+                name="number"
+              />
+              <ErrorMessage
+                name="number"
+                component="div"
+                style={{ color: "tomato" }}
+              />
+            </div>
+          </label>
           <button type="submit" disabled={isSubmitting}>
             Add contact
           </button>

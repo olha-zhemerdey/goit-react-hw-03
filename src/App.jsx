@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import css from "./App.module.css";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
@@ -35,7 +35,7 @@ function App() {
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
   return (
-    <div>
+    <div className={css.fullForm}>
       <h1>Phonebook</h1>
       <ContactForm onAdd={addContact} />
       <SearchBox value={filter} onFilter={setFilter} />

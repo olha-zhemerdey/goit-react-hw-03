@@ -1,33 +1,11 @@
-/* ContactList.module.css */
-
-/* Стиль для списку */
 .list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 400px;
-  margin: 0 auto; /* Центрування списку */
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  list-style: none;
 }
 
-/* Стиль для елементів списку */
-
-/* Анімація для елементів при наведенні */
 .item:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Стиль для тексту елементів */
-.item span {
-  font-size: 16px;
-  color: #333;
-  font-weight: bold;
-  flex-grow: 1;
-  margin-right: 10px;
 }

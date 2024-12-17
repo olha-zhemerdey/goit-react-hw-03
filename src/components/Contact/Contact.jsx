@@ -3,7 +3,7 @@ import { MdPhoneInTalk } from "react-icons/md";
 import css from "./Contact.module.css";
 
 export default function Contact({ data: { id, name, number }, onDelete }) {
-  console.log(id);
+  // console.log(id);
   return (
     <li className={css.wrapperItem}>
       <ul>
